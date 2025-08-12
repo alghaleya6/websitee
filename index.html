@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hamoodiii</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="photo" id="photo"></div>
+  <h1>🎉 Happy Birthday Dear Hamoodi 🎈<br><small>🥭 بو عزقة ❤️</small></h1>
+  <a href="sec-index.html" class="gift-link">🎁 Click here for your gift 🎁</a>
+  <canvas id="confetti"></canvas>
+
+  <script>
+    // Set profile photo
+    document.getElementById('photo').style.backgroundImage = 'url("moodi.jpg")';
+
+    // Confetti setup
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const emojis = ['🎈', '🎉', '🎊', '💖', '🥳'];
+    const pieces = [];
+    for (let i = 0; i < 120; i++) {
+      pieces.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        emoji: emojis[Math.floor(Math.random() * emojis.length)],
+        speed: 1 + Math.random() * 3,
+        size: 20 + Math.random() * 28
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces.forEach(p => {
+        ctx.font = p.size + 'px serif';
+        ctx.fillText(p.emoji, p.x, p.y);
+        p.y += p.speed;
+        if (p.y > canvas.height) p.y = -20;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Floating memes
+    const memes = [
+      'shrek.jpg',
+      'meow.jpg',
+      'caty.jpg',
+      'ham.jpg'
+    ];
+    memes.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'meme';
+      img.style.left = Math.random() * 80 + 'vw';
+      img.style.top = Math.random() * 80 + 'vh';
+      img.style.animationDuration = (6 + Math.random() * 8) + 's';
+      document.body.appendChild(img);
+    });
+  </script>
+</body>
+</html>
