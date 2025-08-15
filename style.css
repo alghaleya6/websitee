@@ -1,3 +1,6 @@
+/* Import Google Font for Header */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Pacifico&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -6,13 +9,31 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  font-family: 'Pacifico', cursive; /* Fun handwritten style */
+  font-size: 1.2em;
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(90deg, #ff99cc, #ffccff);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Adjust header on mobile */
+@media (max-width: 600px) {
+  header {
+    font-size: 1em;
+    padding: 8px;
+  }
+}
+
 .photo {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 6px solid #fff;
   background: #ccc center/cover no-repeat;
@@ -24,16 +45,16 @@ body {
 
 h1 {
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: 50%;
   transform: translate(-50%, 0);
-  font-size: 3em;
+  font-size: 2.4em; /* smaller */
   color: #3636a1;
   text-shadow: 2px 2px #fff, 0 0 15px #ffb3d9;
   text-align: center;
   z-index: 10;
   animation: bounce 2s infinite;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   max-width: 90vw;
@@ -47,7 +68,7 @@ h1 {
 
 .meme {
   position: absolute;
-  width: 160px;
+  width: 140px;
   height: auto;
   animation: float linear infinite;
   max-width: 40vw;
@@ -65,9 +86,9 @@ h1 {
   transform: translateX(-50%);
   background: #041361;
   color: white;
-  padding: 15px 25px;
+  padding: 12px 22px;
   border-radius: 30px;
-  font-size: 1.2em;
+  font-size: 1em;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: background 0.3s ease;
@@ -76,30 +97,28 @@ h1 {
   text-align: center;
 }
 
-/* Hover effect */
 .gift-link:hover {
   background: #343299;
 }
 
-/* Responsive for smaller screens */
+/* Mobile adjustments */
 @media (max-width: 600px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.8em;
     top: 35%;
-    padding: 8px 15px;
+    padding: 6px 12px;
   }
   .photo {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     top: 7%;
   }
   .meme {
-    width: 100px;
+    width: 90px;
   }
   .gift-link {
-    font-size: 1em;
-    padding: 12px 20px;
+    font-size: 0.9em;
+    padding: 10px 18px;
     bottom: 20px;
   }
 }
-
