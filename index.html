@@ -5,8 +5,47 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hamoodiii</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Header styling */
+  .funny-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff4e50, #f9d423);
+    color: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    animation: blink 1s infinite, slide 6s linear infinite;
+  }
+
+  /* Blinking effect */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  /* Text sliding left to right */
+  @keyframes slide {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  body {
+    margin-top: 60px; /* So the header doesn't overlap content */
+  }
+</style>
 </head>
 <body>
+  <!-- Funny header -->
+  <div class="funny-header">
+    🔥 BREAKING: Hamoodi is officially older today! 🔥
+  </div>
+
   <div class="photo" id="photo"></div>
   <h1>🎉 Happy Birthday Dear Hamoodi 🎈<br><small>🥭 بو عزقة ❤️</small></h1>
   <a href="sec-index.html" class="gift-link">🎁 Click here for your gift 🎁</a>
