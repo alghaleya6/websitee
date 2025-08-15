@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fff0f6;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Fredoka', sans-serif;
   overflow-x: hidden;
 }
 
@@ -102,3 +102,4 @@ h1 {
     bottom: 20px;
   }
 }
+
