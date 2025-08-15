@@ -7,38 +7,44 @@
 <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  /* Header styling */
+/* Header styling */
+.funny-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  color: white;
+  font-family: 'Pacifico', cursive; /* Fun and consistent font */
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 0;
+  z-index: 1000;
+  animation: blink 1.2s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Blinking effect */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
   .funny-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #ff4e50, #f9d423);
-    color: white;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 1000;
-    animation: blink 1s infinite, slide 6s linear infinite;
+    font-size: 0.95rem;
+    padding: 6px 0;
   }
+}
 
-  /* Blinking effect */
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
+/* Prevent content from hiding behind header */
+body {
+  margin-top: 50px;
+}
 
-  /* Text sliding left to right */
-  @keyframes slide {
-    0% { background-position: 0 0; }
-    100% { background-position: 200% 0; }
-  }
-
-  body {
-    margin-top: 60px; /* So the header doesn't overlap content */
-  }
 </style>
 </head>
 <body>
@@ -109,4 +115,5 @@
   </script>
 </body>
 </html>
+
 
